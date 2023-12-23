@@ -42,3 +42,13 @@ Before this you need to create a virtual device in the Android studio and run th
 ```bash
 react-native run-android
 ```
+
+## --- What can be improved(Tech Tasks) ---
+
+```bash
+1. Switch to the absolute path/imports;
+2. Add SVG support;
+3. Improving functionality for more opportunities.
+
+Thanks :slightly_smiling_face:
+```
