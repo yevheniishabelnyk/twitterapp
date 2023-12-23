@@ -50,5 +50,5 @@ react-native run-android
 2. Add SVG support;
 3. Improving functionality for more opportunities.
 
-Thanks :slightly_smiling_face:
+Thanks 😊
 ```
