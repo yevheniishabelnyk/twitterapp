@@ -9,7 +9,7 @@ import TabNavigator from "./tabs";
 const Stack = createStackNavigator();
 
 const Navigation = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return (
     <NavigationContainer>
