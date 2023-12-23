@@ -1,3 +1,9 @@
 import { StyleSheet } from "react-native";
 
-export default StyleSheet.create({});
+import { COLORS } from "../../utils/constants";
+
+export default StyleSheet.create({
+  flatlistContainer: {
+    backgroundColor: COLORS.white,
+  },
+});
