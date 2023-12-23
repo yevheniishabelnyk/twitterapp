@@ -4,7 +4,7 @@ import { ActionTypes } from "./actionTypes";
 import { AppThunk, AppAction } from "./types";
 
 // Async action using redux-thunk
-export const fetchUserData = ({ username }): AppThunk => {
+export const fetchUserData = ({ username }: { username: string }): AppThunk => {
   return async (dispatch: Dispatch<AppAction>) => {
     dispatch({ type: ActionTypes.FETCH_USER_DATA_PENDING });
 

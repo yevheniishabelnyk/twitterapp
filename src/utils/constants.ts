@@ -11,7 +11,7 @@ export const COLORS = {
 export const SCREEN_NAMES = {
   HOME: "Home",
   HOME_STACK: "HomeStack",
-  DETAIL: "DETAIL",
+  DETAIL: "Detail",
   SETTINGS: "Settings",
   LOGIN: "Login",
 };
