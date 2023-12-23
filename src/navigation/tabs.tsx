@@ -9,17 +9,17 @@ import Settings from "../screens/Settings";
 
 import HOME_ICON from "../assets/icons/home.png";
 import SETTINGS_ICON from "../assets/icons/settings.png";
+import { SCREEN_NAMES } from "../utils/constants";
 
 const Tab = createBottomTabNavigator();
 
 const screenOptions = ({ route }) => ({
-  headerShown: false,
   tabBarIcon: () => {
     let icon;
 
-    if (route.name === "HomeStack") {
+    if (route.name === SCREEN_NAMES.HOME_STACK) {
       icon = HOME_ICON;
-    } else if (route.name === "Settings") {
+    } else if (route.name === SCREEN_NAMES.SETTINGS) {
       icon = SETTINGS_ICON;
     }
 
@@ -30,9 +30,13 @@ const screenOptions = ({ route }) => ({
 const TabNavigator = () => {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen name='HomeStack' component={HomeStack} options={{ title: "Home" }} />
+      <Tab.Screen
+        name={SCREEN_NAMES.HOME_STACK}
+        component={HomeStack}
+        options={{ title: SCREEN_NAMES.HOME, headerShown: false }}
+      />
 
-      <Tab.Screen name='Settings' component={Settings} />
+      <Tab.Screen name={SCREEN_NAMES.SETTINGS} component={Settings} />
     </Tab.Navigator>
   );
 };

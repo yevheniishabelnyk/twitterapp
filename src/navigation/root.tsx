@@ -1,23 +1,31 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+
+import { SCREEN_NAMES } from "../utils/constants";
+
+import { getIsAuthenticated } from "../store/selectors";
 
 import Login from "../screens/Login";
 import TabNavigator from "./tabs";
 
 const Stack = createStackNavigator();
 
+const screenOptions = { headerShown: false };
+
 const Navigation = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = useSelector(getIsAuthenticated);
 
   return (
     <NavigationContainer>
       {isAuthenticated ? (
         <TabNavigator />
       ) : (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name='Login' component={Login} />
+        <Stack.Navigator screenOptions={screenOptions}>
+          <Stack.Screen name={SCREEN_NAMES.LOGIN} component={Login} />
         </Stack.Navigator>
       )}
     </NavigationContainer>
