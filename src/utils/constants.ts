@@ -9,6 +9,7 @@ export const COLORS = {
 };
 
 export const SCREEN_NAMES = {
+  APP: "App",
   HOME: "Home",
   HOME_STACK: "HomeStack",
   DETAIL: "Detail",

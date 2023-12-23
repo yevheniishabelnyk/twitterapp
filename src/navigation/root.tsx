@@ -21,13 +21,13 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      {isAuthenticated ? (
-        <TabNavigator />
-      ) : (
-        <Stack.Navigator screenOptions={screenOptions}>
+      <Stack.Navigator screenOptions={screenOptions}>
+        {isAuthenticated ? (
+          <Stack.Screen name={SCREEN_NAMES.APP} component={TabNavigator} />
+        ) : (
           <Stack.Screen name={SCREEN_NAMES.LOGIN} component={Login} />
-        </Stack.Navigator>
-      )}
+        )}
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
