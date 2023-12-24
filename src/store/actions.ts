@@ -1,7 +1,11 @@
+import { MAX_TWEETS_LENGTH } from "./../utils/constants";
+import { TWEETS_PAGES } from "./../mock";
 import { Dispatch } from "redux";
 
 import { ActionTypes } from "./actionTypes";
 import { AppThunk, AppAction } from "./types";
+
+import { TWEETS, TWEETS_LOADED } from "../mock";
 
 // Async action using redux-thunk
 export const fetchUserData = ({ username }: { username: string }): AppThunk => {
@@ -18,6 +22,25 @@ export const fetchUserData = ({ username }: { username: string }): AppThunk => {
       dispatch({ type: ActionTypes.FETCH_USER_DATA_SUCCESS, payload: { username } });
     } catch (error) {
       dispatch({ type: ActionTypes.FETCH_USER_DATA_FAILURE, payload: error.message });
+    }
+  };
+};
+
+export const fetchUserTweetsData = (offset: number): AppThunk => {
+  return async (dispatch: Dispatch<AppAction>, getState) => {
+    dispatch({ type: ActionTypes.FETCH_USER_TWEETS_PENDING });
+
+    const userTweets = getState().tweets;
+
+    try {
+      // twitter API
+      // GET: users/:id/tweets
+
+      const payload = offset === 0 ? TWEETS : [...userTweets, ...TWEETS_LOADED];
+
+      dispatch({ type: ActionTypes.FETCH_USER_TWEETS_SUCCESS, payload: payload });
+    } catch (error) {
+      dispatch({ type: ActionTypes.FETCH_USER_TWEETS_FAILURE, payload: error.message });
     }
   };
 };

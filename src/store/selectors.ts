@@ -7,3 +7,5 @@ export const getUsername = (state: AppState) => state.username;
 export const getIsAuthenticated = (state: AppState) => state.isAuthenticated;
 
 export const getIsLoading = (state: AppState) => state.isLoading;
+
+export const getTweets = (state: AppState) => state.tweets;

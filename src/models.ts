@@ -25,6 +25,7 @@ export type UserState = {
   isLoading: boolean;
   isAuthenticated: boolean;
   error: string;
+  tweets: TweetItemType[];
 };
 
 export type DetailScreenProps = RouteProp<DetailScreenParams, "Detail">;
